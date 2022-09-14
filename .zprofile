@@ -8,8 +8,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 ### editors
-export EDITOR="${EDITOR:-nano}"
-export VISUAL="${VISUAL:-nano}"
+export EDITOR="${EDITOR:-hx}"
+export VISUAL="${VISUAL:-hx}"
 export PAGER="${PAGER:-less}"
 
 ### language

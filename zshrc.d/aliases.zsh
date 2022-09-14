@@ -35,6 +35,7 @@ alias l=ls
 alias vi=vim
 
 # more ways to ls
+alias ls='exa'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias ldot='ls -ld .*'

@@ -11,5 +11,5 @@ bindkey -e   # Emacs keybindings
 #bindkey -v  # Vi keybindings
 
 # Set your prompt
-autoload -Uz promptinit && promptinit
-prompt pure
+#autoload -Uz promptinit && promptinit
+#prompt pure

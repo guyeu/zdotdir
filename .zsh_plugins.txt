@@ -27,8 +27,8 @@
 #   prompt promptname
 #
 ###
-sindresorhus/pure kind:fpath
-
+# sindresorhus/pure kind:fpath
+romkatv/powerlevel10k
 
 ### Completions
 #
@@ -84,7 +84,7 @@ romkatv/zsh-bench kind:path
 ####
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/extract
-ohmyzsh/ohmyzsh path:plugins/magic-enter
+# ohmyzsh/ohmyzsh path:plugins/magic-enter
 
 
 ### Framework: Prezto
@@ -142,3 +142,11 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 mattmc3/zfunctions
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
+
+zshzoo/macos
+matthieusb/zsh-sdkman
+agkozak/zsh-z
+unixorn/fzf-zsh-plugin
+mattmc3/zephyr
+
+thuandt/zsh-pipx
