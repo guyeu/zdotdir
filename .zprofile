@@ -29,6 +29,7 @@ typeset -gU cdpath fpath mailpath path
 # set the list of directories that zsh searches for commands
 path=(
   $HOME/{,s}bin(N)
+  $HOME/.local/bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
   $path
@@ -43,3 +44,4 @@ export LESS="${LESS:--g -i -M -R -S -w -z-4}"
 if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
