@@ -82,3 +82,9 @@ alias zdot='cd ${ZDOTDIR:-~}'
 # podman
 alias docker=podman
 
+# kitty
+alias icat="kitty +kitten icat"
+
+# lftp
+alias goto="lftp sftp://jump -e \"cd \$(lftp -c 'connect sftp://jump && find -d 5' | fzf )\""
+
