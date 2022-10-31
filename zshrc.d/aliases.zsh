@@ -28,10 +28,10 @@ alias d='dirs -v'
 alias l=ls
 
 # mask built-ins with better defaults
-# alias cp='cp -i'
-# alias mv='mv -i'
-# alias rm='rm -i'
-# alias ping='ping -c 5'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias ping='ping -c 5'
 alias vi=vim
 
 # more ways to ls
@@ -53,8 +53,8 @@ alias timestamp="date '+%Y-%m-%d %H:%M:%S'"
 alias datestamp="date '+%Y-%m-%d'"
 
 # find
-# alias fd='find . -type d -name'
-# alias ff='find . -type f -name'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
 
 # disk usage
 alias biggest='du -s ./* | sort -nr | awk '\''{print $2}'\'' | xargs du -sh'
@@ -78,6 +78,9 @@ alias please=sudo
 alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
 alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
 alias zdot='cd ${ZDOTDIR:-~}'
+
+# utils
+alias padding='dd iflag=fullblock bs=16 status=none conv=sync count=1'
 
 # podman
 alias docker=podman

@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+##? aes - aes(aes-128-cbc/nopad) encrypt/decrypt input
+##?
+##? usage: aes [-d] -key=0000000000000000 -iv=0000000000000000 <<< input
+
+# function aes {
+	
+	zparseopts -D -E -F - -key:=key -iv:=iv d=flag
+	openssl enc $flag -nopad -aes-128-cbc -K $(xxd -p <(echo -n "${key[-1]}")) -iv $(xxd -p <(echo -n "${iv[-1]}"))
+	
+# }
+
