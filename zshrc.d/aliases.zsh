@@ -82,3 +82,6 @@ alias zdot='cd ${ZDOTDIR:-~}'
 # podman
 alias docker=podman
 
+# linux
+alias hx=helix
+
