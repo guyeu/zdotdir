@@ -8,8 +8,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 ### editors
-export EDITOR="${EDITOR:-hx}"
-export VISUAL="${VISUAL:-hx}"
+export EDITOR="${EDITOR:-kak}"
+export VISUAL="${VISUAL:-kak}"
 export PAGER="${PAGER:-less}"
 
 ### language
@@ -28,6 +28,7 @@ typeset -gU cdpath fpath mailpath path
 
 # set the list of directories that zsh searches for commands
 path=(
+  /opt/homebrew/opt/*/libexec/gnubin(N)
   $HOME/{,s}bin(N)
   $HOME/.local/bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
