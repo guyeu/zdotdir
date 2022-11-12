@@ -80,13 +80,15 @@ alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
 alias zdot='cd ${ZDOTDIR:-~}'
 
 # utils
-alias padding='dd iflag=fullblock bs=16 status=none conv=sync count=1'
+alias padding='dd iflag=fullblock bs=16 status=none conv=sync'
+alias array2str='grep -E -o "[0-9]*" | xargs -n 1 printf "%04x\n" | xxd -r -p'
 
 # podman
 alias docker=podman
 
 # kitty
 alias icat="kitty +kitten icat"
+alias kssh="kitty +kitten ssh"
 
 # lftp
 alias goto="lftp sftp://jump -e \"cd \$(lftp -c 'connect sftp://jump && find -d 5' | fzf )\""
