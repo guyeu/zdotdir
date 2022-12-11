@@ -8,8 +8,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 ### editors
-export EDITOR="${EDITOR:-kak}"
-export VISUAL="${VISUAL:-kak}"
+export EDITOR="${EDITOR:-vim}"
+export VISUAL="${VISUAL:-vim}"
 export PAGER="${PAGER:-less}"
 
 ### language
