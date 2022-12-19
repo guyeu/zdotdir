@@ -17,6 +17,9 @@ export LANG="${LANG:-en_US.UTF-8}"
 export LANGUAGE="${LANGUAGE:-en}"
 export LC_ALL="${LC_ALL:-en_US.UTF-8}"
 
+### gpg
+export GPG_TTY=$(tty)
+
 ### paths
 # ensure path arrays do not contain duplicates
 typeset -gU cdpath fpath mailpath path
