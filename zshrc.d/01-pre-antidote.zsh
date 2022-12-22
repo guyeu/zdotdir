@@ -16,9 +16,14 @@ unsetopt BG_NICE             # Don't run background jobs at a lower priority.
 unsetopt HUP                 # Don't kill jobs on shell exit.
 unsetopt CHECK_JOBS          # Don't report on jobs when shell exit.
 
+setopt AUTO_PUSHD            # make n-cd work
+setopt PUSHD_IGNORE_DUPS     # recommend by n-cd
+
+setopt IGNORE_EOF            # forces the user to type exit or logout, instead of just pressing ^D.
 # Set any environment variables or keybindings related to your plugins or session.
 SHELL_SESSIONS_DISABLE=1
 KEYTIMEOUT=1
 
 # Set any supplemental completions directories before compinit is run.
 fpath=(${ZDOTDIR}/completions(-/FN) $fpath)
+

@@ -20,6 +20,9 @@ export LC_ALL="${LC_ALL:-en_US.UTF-8}"
 ### gpg
 export GPG_TTY=$(tty)
 
+### WORDCHARS
+export WORDCHARS="*?_-.[]~&#$%^(){}<>"
+
 ### paths
 # ensure path arrays do not contain duplicates
 typeset -gU cdpath fpath mailpath path
@@ -45,7 +48,5 @@ path=(
 export LESS="${LESS:--g -i -M -R -S -w -z-4}"
 
 # set the less input preprocessor
-if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
-  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
-fi
+export LESSOPEN='| lessfilter-fzf %s'
 
