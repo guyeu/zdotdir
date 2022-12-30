@@ -93,3 +93,6 @@ alias kssh="kitty +kitten ssh"
 # lftp
 alias goto="lftp sftp://jump -e \"cd \$(lftp -c 'connect sftp://jump && find -d 5' | fzf )\""
 
+# develop tools
+alias mvn="mvnd"
+
