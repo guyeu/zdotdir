@@ -34,6 +34,7 @@ typeset -gU cdpath fpath mailpath path
 
 # set the list of directories that zsh searches for commands
 path=(
+  /opt/homebrew/opt/openssl@3/bin(N)
   /opt/homebrew/opt/*/libexec/gnubin(N)
   $HOME/{,s}bin(N)
   $HOME/.local/bin(N)
