@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+##? role-export - role export from remote to stdout
+##?
+##? usage: role-export --key 0000000000000000 --iv 0000000000000000 --global 'https://global.tkw.game:8080' --rid 12345_10001
+
+# function role-export {
+
+    args=$(getopt --options '' --alternative --longoptions 'key:,iv:,global:,rid:' -- "$@")
+    if [ $? -ne 0 ] ; then fnhelp role-export ; return 2 ; fi
+    eval set -- "$args"
+
+    while :; do
+        case "$1" in
+            --key) key="$2" ; shift 2 ;;
+            --iv) iv="$2" ; shift 2 ;;
+            --global) global="$2" ; shift 2 ;;
+            --rid) read uid sec <<< $( awk -F_ '{print $1,$2}' <<< $2 ) ; shift 2 ;;
+            --) shift; break ;;
+            *) echo "wrong args: $1" ; return 1 ;;
+        esac
+    done
+
+    http POST "$global" action:rolesExport Content-Type:application/json @<(echo "{\"uid\": \"$uid\", \"secId\": \"$sec\"}" | padding | aes --key "$key" --iv "$iv" | base64 -w 0) | base64 --decode | aes -d --key "$key" --iv "$iv" | jq -r '.data | .role'
+
+# }

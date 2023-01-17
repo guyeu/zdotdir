@@ -2,11 +2,23 @@
 
 ##? aes - aes(aes-128-cbc/nopad) encrypt/decrypt input
 ##?
-##? usage: aes [-d] -key 0000000000000000 -iv 0000000000000000 <<< input
+##? usage: aes [-d] --key 0000000000000000 --iv 0000000000000000 <<< input
 
 # function aes {
-    zmodload zsh/zutil
-    zparseopts -D -M -F -K - d=flag  -key=key -iv=iv || return 1
-    openssl enc $flag -nopad -aes-128-cbc -K $(xxd -p <(echo -n "${key[-1]}")) -iv $(xxd -p <(echo -n "${iv[-1]}"))
+    args=$(getopt --options 'd' --alternative --longoptions 'key:,iv:' -- "$@") ; 
+    if [ $? -ne 0 ]; then fnhelp aes ; return 2 ; fi
+    eval set -- "$args"
+
+    while :; do
+        case "$1" in
+            -d) flag="-d" ; shift ;;
+            --key) key="$2" ; shift 2 ;;
+            --iv) iv="$2" ; shift 2 ;;
+            --) shift; break ;;
+            *) echo "wrong args: $1" ; return 1 ;;
+        esac
+    done
+
+    openssl enc $flag -nopad -aes-128-cbc -K $(xxd -p <(echo -n "${key}")) -iv $(xxd -p <(echo -n "${iv}"))
 # }
 
