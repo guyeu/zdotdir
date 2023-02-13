@@ -96,3 +96,6 @@ alias goto="lftp sftp://jump -e \"cd \$(lftp -c 'connect sftp://jump && find -d 
 # develop tools
 alias mvn="mvnd"
 
+# notes
+alias eisvogel='pandoc --template "eisvogel" --listings --pdf-engine "xelatex" -V CJKmainfont="PingFang SC"'
+

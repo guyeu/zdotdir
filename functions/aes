@@ -5,15 +5,15 @@
 ##? usage: aes [-d] --key 0000000000000000 --iv 0000000000000000 <<< input
 
 # function aes {
-    args=$(getopt --options 'd' --alternative --longoptions 'key:,iv:' -- "$@") ; 
+    local args=$(getopt --options 'd' --alternative --longoptions 'key:,iv:' -- "$@") ; 
     if [ $? -ne 0 ]; then fnhelp aes ; return 2 ; fi
     eval set -- "$args"
 
     while :; do
         case "$1" in
-            -d) flag="-d" ; shift ;;
-            --key) key="$2" ; shift 2 ;;
-            --iv) iv="$2" ; shift 2 ;;
+            -d) local flag="-d" ; shift ;;
+            --key) local key="$2" ; shift 2 ;;
+            --iv) local iv="$2" ; shift 2 ;;
             --) shift; break ;;
             *) echo "wrong args: $1" ; return 1 ;;
         esac
