@@ -83,9 +83,6 @@ alias zdot='cd ${ZDOTDIR:-~}'
 alias padding='dd iflag=fullblock bs=16 status=none conv=sync'
 alias array2str='grep -E -o "[0-9]*" | xargs -n 1 printf "%04x\n" | xxd -r -p'
 
-# podman
-alias docker=podman
-
 # kitty
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
