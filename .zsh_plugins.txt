@@ -149,6 +149,6 @@ mattmc3/zephyr path:plugins/history
 zshzoo/macos
 agkozak/zsh-z
 matthieusb/zsh-sdkman
-# unixorn/fzf-zsh-plugin
+unixorn/fzf-zsh-plugin branch:main
 mattmc3/zfunctions
 thuandt/zsh-pipx
