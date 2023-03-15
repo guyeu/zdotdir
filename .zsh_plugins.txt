@@ -150,5 +150,6 @@ zshzoo/macos
 agkozak/zsh-z
 matthieusb/zsh-sdkman
 unixorn/fzf-zsh-plugin branch:main
+Aloxaf/fzf-tab
 mattmc3/zfunctions
 thuandt/zsh-pipx
