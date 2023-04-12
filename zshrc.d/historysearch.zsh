@@ -1,11 +1,7 @@
-# enable fuzzy searching, higher numbers weight toward shorter matches.
-export MCFLY_FUZZY=2
 
-# move interface view to bottom.
-export MCFLY_INTERFACE_VIEW=BOTTOM
-
-# to swap the color scheme for use in a light terminal.
-export MCFLY_LIGHT=TRUE
-
-eval "$(mcfly init zsh)"
+# HSTR configuration - add this to ~/.zshrc
+alias hh=hstr                    # hh to be alias for hstr
+setopt histignorespace           # skip cmds w/ leading space from history
+export HSTR_CONFIG=hicolor,substring-matching       # get more colors
+bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
