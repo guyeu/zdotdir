@@ -128,7 +128,7 @@ ohmyzsh/ohmyzsh path:plugins/extract
 ###
 # Syntax highlighting
 zdharma-continuum/fast-syntax-highlighting kind:defer
-
+ellie/atuin kind:defer
 
 ### Plugins
 #
