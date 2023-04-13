@@ -50,5 +50,5 @@ path=(
 export LESS="${LESS:--g -i -M -R -S -w -z-4}"
 
 # set the less input preprocessor
-export LESSOPEN='| lessfilter-fzf %s'
+export LESSOPEN='|lesspipe.sh %s'
 
