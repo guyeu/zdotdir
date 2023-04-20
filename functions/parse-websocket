@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+##? parse-websocket - parse websocket frame hex input and print payload to stdout
+##? see https://codegolf.stackexchange.com/questions/256026/parse-websocket-frames
+##?
+##? usage: parse-websocket <<(echo '81 83 3D 54 23 06 70 10 6D')
+
+# function parse-websocket {
+
+    read -A input
+    local length=$((16#${input[2]}))
+
+    if [[ $length = 254 ]]; then
+        local pos=4;
+    elif [[ $length = 255 ]]; then
+        local pos=10;
+    else
+        local pos=2;
+    fi
+
+    local masking=(${input:$pos:4})
+    local payload=(${input:$((pos + 4))})
+
+    for i in {1..$#payload};
+    do
+        xxd -r -p <<(printf "%X" "$(( 0x${payload[$i]} ^ 0x${masking[$(( ( $i - 1 ) % 4 + 1 ))]} ))")
+    done
+
+# }
+
