@@ -6,12 +6,11 @@
 #
 ## function git-merge-request {
     
-    declare -A targets=( [new-tencent]=release-cn-tencent [new-icebird]=release-cn-icebird [new-korea]=release-korea [new-vn]=release-vn )
-    declare -A names=( [new-tencent]=腾讯 [new-icebird]=买量 [new-korea]=韩国 [new-vn]=越南 )
+    declare -A targets=( [new-tencent]=release-cn-tencent [new-icebird]=release-cn-icebird [new-korea]=release-korea [new-vn]=release-vn [new-hant]=release-hant [new-japan]=release-japan [new-tailand]=release-tailand)
+    declare -A names=( [new-tencent]=腾讯 [new-icebird]=买量 [new-korea]=韩国 [new-vn]=越南 [new-hant]=繁体 [new-japan]=日本 [new-tailand]=泰国)
     
     local branch_name=$(git rev-parse --abbrev-ref HEAD)
     local target=${targets[${branch_name}]}
-    echo ${target}
 
     git push
     
