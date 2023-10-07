@@ -35,7 +35,7 @@ alias ping='ping -c 5'
 alias vi=vim
 
 # more ways to ls
-alias ls='exa'
+alias ls='eza'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias ldot='ls -ld .*'
