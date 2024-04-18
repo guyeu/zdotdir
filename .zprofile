@@ -39,6 +39,7 @@ path=(
     /opt/homebrew/opt/*/libexec/gnubin(N)
     $HOME/{,s}bin(N)
     $HOME/.local/bin(N)
+    $HOME/go/bin(N)
     /opt/{homebrew,local}/{,s}bin(N)
     /usr/local/{,s}bin(N)
     $path
@@ -52,3 +53,6 @@ export LESS="${LESS:--g -i -M -R -S -w -z-4}"
 # set the less input preprocessor
 export LESSOPEN='|lesspipe.sh %s'
 
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

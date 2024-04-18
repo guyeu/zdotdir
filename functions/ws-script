@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+##? ws-script - run a script(java bytecode) in remote jvm 
+##?
+##? usage: ws-script path/to/Name.class url target [targets...]
+#function ws-script {
+    class=$1
+    url=$2
+
+    className="${$(basename ${class})%.*}"
+    echo "Executing ${className} on ${url}" >&2
+
+    array="$(for ele in ${@:3}; do echo $ele; done | jq --raw-input '.' | jq --slurp --compact-output)"
+    script="$(cat "${class}" | base64 -w 0)"
+    jq --null-input --raw-output --arg action /dev/script --arg name "${className}" --arg script "${script}" --argjson targets "${array}" '{"action": $action, "targets": $targets, "name": $name, "retry": 0, "script": $script }' | https --print HBhb --json POST "${url}/global/login"
+#}

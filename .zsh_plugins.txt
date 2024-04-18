@@ -84,6 +84,7 @@ romkatv/powerlevel10k
 ####
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/golang
 # ohmyzsh/ohmyzsh path:plugins/fzf
 
 ### Framework: Prezto
